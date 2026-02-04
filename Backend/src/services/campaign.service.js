@@ -14,8 +14,14 @@ const getCampaignById = (id) => {
   return Campaign.findById(id);
 };
 
-const updateStatus = (id, status) => {
-  return Campaign.findByIdAndUpdate(id, { status }, { new: true });
+
+const updateCampaignStatus = async (id, status) => {
+  const campaign = await Campaign.findByIdAndUpdate(
+    id,
+    { status },
+    { new: true } 
+  );
+  return campaign;
 };
 
 const getStats = async (id) => {
@@ -43,6 +49,6 @@ module.exports = {
     createCampaign , 
     getCampaigns , 
     getCampaignById , 
-    updateStatus, 
+    updateCampaignStatus,
     getStats
 }

@@ -36,15 +36,15 @@ exports.getOne = async (req, res, next) => {
 
 exports.updateStatus = async (req, res, next) => {
   try {
-    const campaign = await campaignService.getCampaignById(
-      req.params.id,
-      req.body.status,
-    );
+    const { status } = req.body;
+    const campaign = await campaignService.updateCampaignStatus(req.params.id, status);
+
     res.json(campaign);
   } catch (err) {
     next(err);
   }
 };
+
 
 exports.stats = async (req, res, next) => {
   try {

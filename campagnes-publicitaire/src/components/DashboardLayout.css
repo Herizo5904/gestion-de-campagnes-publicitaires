@@ -1,0 +1,12 @@
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.dashboard-main {
+  flex: 1;
+  padding: 20px 40px;
+  background-color: #f7f9fc;
+  overflow-y: auto;
+}
